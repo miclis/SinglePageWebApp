@@ -7,5 +7,6 @@ module.exports = {
     },
     rules: {
         "no-undef": "off"
-    }
+    },
+    reportUnusedDisableDirectives: true
 };
