@@ -1,10 +1,10 @@
-import { join } from 'path';
+import path from 'path';
 import express from 'express';
 const debug = require('debug')('edu:server');
 
 const app = express(),
     DIST_DIR = __dirname,
-    HTML_FILE = join(DIST_DIR, 'index.html');
+    HTML_FILE = path.join(DIST_DIR, 'index.html');
 
 app.use(express.static(DIST_DIR));
 
