@@ -6,7 +6,12 @@ module.exports = {
         "es6": true
     },
     rules: {
-        "no-undef": "off"
+        "no-undef": "off",
     },
-    reportUnusedDisableDirectives: true
+    reportUnusedDisableDirectives: true,
+    overrides: [
+        {
+            "files": ["./dist/*"]
+        }
+    ]
 };
