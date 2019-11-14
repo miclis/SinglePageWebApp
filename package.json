@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "@powershell rm -r -fo dist && webpack --mode development",
+    "clean": "@powershell rm -r -fo dist",
+    "build-dev": "npm run clean && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "build-prod": "npm run clean && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "node --inspect ./dist/server.js"
   },
   "keywords": [],
@@ -21,7 +23,11 @@
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"
